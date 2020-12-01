@@ -1,0 +1,59 @@
+{% extends 'bookings/header.html' %}
+{% load static %}
+
+<head>
+
+</head>
+
+<body>
+    {% block content %}
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-4 col-s-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'images/islands/Rum.jpg' %}" alt="Isle of Rum" style="width:100%; height:auto;">
+                <div class="card-body">
+                    <h3><b>Isle of Rum</b></h3>
+                    <p>See the islands of Rum, Eigg and Muck via our ferry.  There are multiple activities that can be done on the islands that will be fun for all the family.  Go sight seeing for wildlife on the Rum nature reserve; or visit Muck for the hauntingly beautiful landscapes.  Climb an Sgurr in Eigg, the largest pitchstone ride in Europe!  There's plenty to see or do on the islands.</p>
+                </div>
+                <button class="btn" type="submit" name="bookferry" value="1">
+                    <a href="{% url 'bookferry' %}">Book Now</a>
+                </button>
+            </div>
+        </div>
+        <div class="col-4 col-s-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'images/islands/Eigg.jpg' %}" alt="Isle of Eigg" style="width:100%; height:auto;">
+                <div class="card-body">
+                    <h3><b>Isle of Eigg</b></h3>
+                    <p>See the islands of Rum, Eigg and Muck via our ferry.  There are multiple activities that can be done on the islands that will be fun for all the family.  Go sight seeing for wildlife on the Rum nature reserve; or visit Muck for the hauntingly beautiful landscapes.  Climb an Sgurr in Eigg, the largest pitchstone ride in Europe!  There's plenty to see or do on the islands.</p>
+                </div> 
+                <button class="btn" type="submit" name="bookferry" value="1">
+                    <a href="{% url 'bookferry' %}">Book Now</a>
+                </button>
+            </div>
+        </div>
+        <div class="col-4 col-s-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'images/islands/Muck.jpg' %}" alt="Isle of Muck" style="width:100%; height:auto;">
+                <div class="card-body">
+                    <h3><b>Isle of Muck</b></h3>
+                    <p>See the islands of Rum, Eigg and Muck via our ferry.  There are multiple activities that can be done on the islands that will be fun for all the family.  Go sight seeing for wildlife on the Rum nature reserve; or visit Muck for the hauntingly beautiful landscapes.  Climb an Sgurr in Eigg, the largest pitchstone ride in Europe!  There's plenty to see or do on the islands.</p>
+                </div>
+                <button class="btn" type="submit" name="bookferry" value="1">
+                    <a href="{% url 'bookferry' %}">Book Now</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
+    
+    {% endblock %}
+    
+    
+    
+</body>

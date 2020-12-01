@@ -1,0 +1,43 @@
+{% extends 'bookings/header.html' %}
+{% load static %}
+{% block content %}
+    
+        <h2>Booking Confirmation</h2>
+            <h2>Your ferry tickets have been confirmed.</h2>
+            <h3>Booking Details</h3>
+            <button style="background-color:#75D1FF; color:#000000;" class="btn btn-outline-info" data-toggle="modal" data-target="#bookingDetails">Booking Details</button>
+            
+            <div class="modal" id="bookingDetails">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-head">
+                            <h4>Ticket Details</h4>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">X</button>
+                        </div>
+  
+                        <div class="modal-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><b>Booking Id Number: </b>{{book.id}}</li>
+                                <li class="list-group-item"><b>Route: </b>{{book.booked_route}}</li>
+                                <li class="list-group-item"><b>Ferry: </b>{{ferry}}</li>
+                                <li class="list-group-item"><b>Number of Seats: </b>{{book.booked_seats}}</li>
+                                <li class="list-group-item"><b>Day of travel: </b>{{book.booked_date}}</li>
+                                <li class="list-group-item"><b>Adults: </b>{{book.adults}}</li>
+                                <li class="list-group-item"><b>Children: </b>{{book.children}}</li>
+                                <li class="list-group-item"><b>Wheelchair: </b>{{book.wheelchair_needed}}</li>
+                                <li class="list-group-item"><b>Total Cost: </b>{{total_cost}}</li>    
+                            </ul>
+                        </div>
+                    
+                        <div class="modal-footer">
+                            <button class="btn btn-danger" onclick="window.print()">Print ticket</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+
+{% endblock %}

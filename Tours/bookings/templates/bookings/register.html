@@ -1,0 +1,28 @@
+{% extends 'bookings/header.html' %}
+{% load static %}
+
+<head>
+
+</head>
+
+<body>
+    <div class = "container">
+        {% block content %}
+            <br>
+            <br>
+            <h1>Register</h1>
+            <br>
+            <br>
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <br>
+                <br>
+                <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Sign Up</button>
+            </form>
+        {% endblock %}
+    </div>
+    
+    
+    
+</body>

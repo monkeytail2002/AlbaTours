@@ -1,0 +1,42 @@
+{% extends 'bookings/header.html' %}
+{% load static %}
+
+{{ form.media }}
+<head>
+    
+</head>
+
+<body>
+    {% block content %}
+    <br>
+    <br>
+    <h1>Book a ferry</h1>
+    <br>
+    <br>
+    <h3>Timetable</h3>
+    <br>
+    <div class="row">
+                <img src="{% static 'images/timetable.png' %}" alt="Timetable" style="width:100%; height:auto;">
+    </div>
+
+    <br>
+    <p>Our operating dates run from the 20th of May until the 21st of October.  Saturday and Sunday tours only operate from June to August.</p>
+<br>
+    <br>
+    <section>
+        <div class="container">
+            <form action="{% url 'booked' %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <br>
+                <button style="background-color:#75D1FF; color:#000000;" class="btn btn-outline-info" type="submit">Book</button>
+            </form>
+        </div>  
+    </section>
+
+    
+    {% endblock %}
+    
+    
+    
+</body>
