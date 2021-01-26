@@ -1,0 +1,44 @@
+{% extends 'bookings/header.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<body>
+    {% block content %}
+    <br>
+    <br>
+    <div class="row">
+
+        <div class="col-10 col-s-4">
+            <div class="card">
+                           <h1>Subscribe to the Newsletter</h1>
+                        <br>
+                        <p>Sign up to our quarterly newsletter today!</p>
+                <div class="card-body">
+                    <form method="POST" action="{% url 'subscribe' %}">
+
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <br>
+                        <br>
+                        <button style="background-color:#F4EB16; color:blue"  class="btn btn-outline-info" type="submit">Subscribe</button>            
+                    </form>
+                    <br>
+                    <br>
+                    <p>If you want to unsubscribe from our newsletter then you can do so <a href="{% url 'unsubscribe' %}"><strong>here</strong></a></p>
+                </div> 
+                    
+                
+            </div>
+        </div>
+    </div>
+
+        <br>
+    <br>
+    
+    {% include 'bookings/includes/footer.html' %}
+    
+    
+    {% endblock %}
+  
+</body>
+
