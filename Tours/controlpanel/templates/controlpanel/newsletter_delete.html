@@ -1,0 +1,28 @@
+{% extends 'bookings/header.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+<body>
+    {% block content %}
+    <br>
+    <br>
+    <h1 class='page-header'>Delete Newsletter</h1>
+    <br>
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+        {{form|crispy}}
+        <br>
+        <br>
+        <button class="btn btn-danger" type="submit">Delete</button>
+    </form>
+    
+    
+    
+    {% include 'bookings/includes/footer.html' %} 
+    {% endblock %}
+    
+    
+    
+</body>

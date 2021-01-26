@@ -1,0 +1,133 @@
+{% extends 'bookings/header.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+<body>
+    
+
+    {% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="sidebar-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'dashboard' %}">
+                                <span data-feather="home"></span>
+                                Dashboard <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'newsletter' %}">
+                                <span data-feather="edit"></span>
+                                Create Newsletter
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'reports' %}">
+                                <span data-feather="edit"></span>
+                                Reports
+                            </a>
+                        </li>
+<!--
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Customers
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="bar-chart-2"></span>
+                                Reports
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="layers"></span>
+                                Integrations
+                            </a>
+                        </li>
+-->
+                    </ul>
+                    
+<!--
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Saved reports</span>
+                        <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                            <span data-feather="plus-circle"></span>
+                        </a>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Current month
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <span data-feather="file-text"></span>
+                                            Last quarter
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Social engagement
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                              <span data-feather="file-text"></span>
+                                Year-end sale
+                            </a>
+                        </li>
+                    </ul>
+-->
+                </div>
+            </nav>
+            
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="page-header">Staff Dashboard</h1>
+                </div>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <a href="{% url 'dashboard' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Dashboard</button></a>
+                        <a href="{% url 'newsletter' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Create Newsletters</button></a>
+                        <a href="{% url 'reports' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Reports</button></a>
+                    </div>
+                </div>
+                <br>
+                <br>
+                
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <div class="page-header">
+                        <h5>{{ newsletter.subject }}</h5>
+                    </div>
+                    {{ newsletter.body }}
+                    <div class="col-sm-8 col-sm-offset-4">
+                        <div class="col-sm-2">
+                            <a href="{% url 'edit' pk=newsletter.pk%}"><button>Edit</button></a>
+                        </div>
+                        <div class="col-sm-2">
+                            <a href="{% url 'delete' pk=newsletter.pk%}"><button class="btn btn-danger">Delete</button></a>
+                        </div>
+                    </div>
+                </div>
+                                
+            </main>
+        </div>
+    </div>   
+    
+        <br>
+    <br>
+    
+    {% include 'bookings/includes/footer.html' %}
+    
+    {% endblock %}
+   
+    
+</body>
